@@ -47,12 +47,20 @@ public class FileReader {
         }
     }
 
-    public File chooseFile() {
-        JFileChooser fileChooser = new JFileChooser("C:/Users/aapiane09/IdeaProjects/DriversLicenceExam/src");
-        File file = null;
-        if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-            file = fileChooser.getSelectedFile();
+    public void generateResults() throws NullPointerException {
+        File file = new File("results/user_results.txt");
+        try {
+            boolean createdNewFile = file.createNewFile();
+            if (createdNewFile) {
+                System.out.println("File created @ " + file.getCanonicalPath());
+
+            } else {
+                throw new Exception("File already exists.");
+            }
+        } catch (Exception err) {
+            // TODO Add logic to create new file w/ name like results_1, results_2, etc. and rerun recursively?
+            System.out.println("Exception: " + err.getMessage());
+            err.printStackTrace();
         }
-        return file;
     }
 }
