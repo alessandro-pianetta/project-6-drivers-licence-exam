@@ -1,29 +1,28 @@
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.Scanner;
-import java.util.function.Consumer;
+import java.util.function.BiConsumer;
 
 
 public class FileReader {
-    private int currentLine = 0;
-    private double score = 0;
-    private String[] studentAnswers = new String[20];
-    private String[] cachedAnswers = new String[20];
+    private final Scanner input = new Scanner(System.in);
+    private final String[] studentAnswers = new String[20];
+    private final String[] cachedAnswers = new String[20];
+    private int score = 0;
 
-    public void readFile (File source, Consumer<String> callback) throws Exception {
-        Scanner input = new Scanner(source);
-        while (input.hasNext()) {
-            String nextLine = input.nextLine();
-            callback.accept(nextLine);
-            this.currentLine++;
+    public void readFile (File source, BiConsumer<String, Integer> callback) throws Exception {
+        Scanner reader = new Scanner(source);
+        int currentLine = 0;
+        while (reader.hasNext()) {
+            String nextLine = reader.nextLine();
+            callback.accept(nextLine, currentLine);
+            currentLine++;
         }
         input.close();
-        this.currentLine = 0;
     }
 
-    public void askQuestion(String line) {
+    public void askQuestion(String line, int currentLine) {
         int count = 0;
-        Scanner input = new Scanner(System.in);
         String[] question = line.split("\\|", 5);
         for (String segment:question) {
             String questionSegment = segment;
@@ -34,14 +33,22 @@ public class FileReader {
             System.out.println(questionSegment);
         }
 
-        // TODO ADD ERROR CHECKING
+        String answer = this.input.next();
 
-        String answer = input.next();
+        while (!(answer.equalsIgnoreCase("A") || answer.equalsIgnoreCase("B") || answer.equalsIgnoreCase("C") || answer.equalsIgnoreCase("D"))) {
+            System.out.println("Sorry, your answer must be A, B, C, or D. Please try again.");
+            answer = this.input.next();
+
+            if (answer.equalsIgnoreCase("quit")) {
+                System.out.println("Goodbye!");
+                System.exit(0);
+            }
+        }
+
         this.studentAnswers[currentLine] = answer.toUpperCase();
     }
 
-    public void checkAnswers (String answer) {
-        // TODO Combine with generate results? Any point to not check both at the same time?
+    public void cacheAndCheckAnswers (String answer, int currentLine) {
         cachedAnswers[currentLine] = answer;
         if (answer.equals(this.studentAnswers[currentLine])) {
             score++;
@@ -64,13 +71,11 @@ public class FileReader {
                     output.println(yourAnswer + " | " + cachedAnswer + " || " + (answerIsCorrect ? "Correct!" : "Incorrect..."));
                     i++;
                 }
-                int score = (int) this.score;
                 output.println("\n" + "**************************************************************" + "\n");
-                output.println("Total score: " + (score)+ "/20" + "\n");
+                output.println("Total score: " + (this.score)+ "/20" + "\n");
 
                 String finalResult = "Congratulations! You passed with flying colors!";
-                // TODO Change to this.score <= 15
-                if ((this.score / 20) <= 0.75) {
+                if (this.score < 15) {
                     finalResult = "Sorry, you didn't pass. Try again soon!";
                 }
                 output.println(finalResult);

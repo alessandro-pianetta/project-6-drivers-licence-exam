@@ -7,7 +7,7 @@ public class Main {
             File questions = new File("assets/questions.txt");
             reader.readFile(questions, reader::askQuestion);
             File answers = new File("assets/DMVanswers.txt");
-            reader.readFile(answers, reader::checkAnswers);
+            reader.readFile(answers, reader::cacheAndCheckAnswers);
             reader.generateResults();
         } catch (Exception err) {
             System.out.println("Exception: " + err.getMessage());
