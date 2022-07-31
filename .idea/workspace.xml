@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c27b66b4-477c-44d3-a846-3a61c6593c03" name="Changes" comment="Prints results to report.txt">
+    <list default="true" id="c27b66b4-477c-44d3-a846-3a61c6593c03" name="Changes" comment="Adds error handling and quit functionality to askQuestion method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -125,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659289415158</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Adds error handling and quit functionality to askQuestion method">
+      <created>1659294479793</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659294479793</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,7 +155,8 @@
     <MESSAGE value="Caches test answers and calculates score" />
     <MESSAGE value="Creates a new file for results, moves questions and answers to own assets/ folder" />
     <MESSAGE value="Prints results to report.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prints results to report.txt" />
+    <MESSAGE value="Adds error handling and quit functionality to askQuestion method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds error handling and quit functionality to askQuestion method" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
