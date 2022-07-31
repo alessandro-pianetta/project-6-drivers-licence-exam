@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.function.BiConsumer;
 
 
-public class FileReader {
+public class TestGiver {
     private final Scanner input = new Scanner(System.in);
     private final String[] studentAnswers = new String[20];
     private final String[] cachedAnswers = new String[20];
