@@ -7,6 +7,7 @@ public class Main {
             FileReader reader = new FileReader();
             File questions = reader.chooseFile();
             reader.readFile(questions, reader::askQuestion);
+            System.out.println(Arrays.toString(reader.studentAnswers));
         } catch (Exception err) {
             System.out.println("Exception: " + err.getMessage());
         }

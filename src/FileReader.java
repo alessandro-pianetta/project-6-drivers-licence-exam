@@ -5,14 +5,18 @@ import java.util.function.Consumer;
 
 
 public class FileReader {
+    int currentLine = 0;
+    String[] studentAnswers = new String[20];
 
     public void readFile (File source, Consumer<String> callback) throws Exception {
         Scanner input = new Scanner(source);
         while (input.hasNext()) {
             String nextLine = input.nextLine();
             callback.accept(nextLine);
+            this.currentLine++;
         }
         input.close();
+        this.currentLine = 0;
     }
 
     public void askQuestion(String line) {
@@ -27,6 +31,8 @@ public class FileReader {
             count++;
             System.out.println(questionSegment);
         }
+        String answer = input.next();
+        this.studentAnswers[currentLine] = answer;
     }
     public File chooseFile() {
         JFileChooser fileChooser = new JFileChooser("C:/Users/aapiane09/IdeaProjects/DriversLicenceExam/src");
