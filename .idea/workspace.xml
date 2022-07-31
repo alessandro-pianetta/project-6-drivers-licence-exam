@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c27b66b4-477c-44d3-a846-3a61c6593c03" name="Changes" comment="Changes 'FileReader' class name to 'TestGiver', and instance name 'reader' to 'proctor'">
+    <list default="true" id="c27b66b4-477c-44d3-a846-3a61c6593c03" name="Changes" comment="Adds constructor to take number of questions and adds score percentage to final report">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestGiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestGiver.java" afterDir="false" />
@@ -146,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659303996766</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Adds constructor to take number of questions and adds score percentage to final report">
+      <created>1659305824062</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1659305824062</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,7 +179,8 @@
     <MESSAGE value="Adds error handling and quit functionality to askQuestion method" />
     <MESSAGE value="Relegates error handling with 2+ methods that could throw the same error to main function, and one-off exceptions to the method itself." />
     <MESSAGE value="Changes 'FileReader' class name to 'TestGiver', and instance name 'reader' to 'proctor'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes 'FileReader' class name to 'TestGiver', and instance name 'reader' to 'proctor'" />
+    <MESSAGE value="Adds constructor to take number of questions and adds score percentage to final report" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds constructor to take number of questions and adds score percentage to final report" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
