@@ -3,15 +3,20 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.FileAlreadyExistsException;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.function.BiConsumer;
 
 
 public class TestGiver {
     private final Scanner input = new Scanner(System.in);
-    private final String[] studentAnswers = new String[20];
-    private final String[] cachedAnswers = new String[20];
+    private final String[] studentAnswers;
+    private final String[] cachedAnswers;
     private int score = 0;
+
+    TestGiver (int testLength) {
+        this.studentAnswers = this.cachedAnswers = new String[testLength];
+    }
 
     public void readFile (String sourceUri, BiConsumer<String, Integer> callback) throws FileNotFoundException {
         File sourceFile = new File(sourceUri);
@@ -79,7 +84,11 @@ public class TestGiver {
             }
             output.println("\n" + "**************************************************************" + "\n");
 
-            output.println("Total score: " + (this.score)+ "/20" + "\n");
+
+            double userPoints = this.score;
+            double totalPoints = this.studentAnswers.length;
+            double percentageCorrect = userPoints / totalPoints;
+            output.println("Total score: " + (this.score)+ "/20 (" + new DecimalFormat("##%").format(percentageCorrect) + ")\n");
             String finalResult = "Congratulations! You passed with flying colors!";
             if (this.score < 15) {
                 finalResult = "Sorry, you didn't pass. Try again soon!";

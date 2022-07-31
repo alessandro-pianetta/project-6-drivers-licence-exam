@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) {
-        TestGiver proctor = new TestGiver();
+        TestGiver proctor = new TestGiver(20);
         try {
             System.out.println("Please enter only 'A', 'B', 'C', or 'D' to answer each question. Case does not matter. Enter 'quit' to exit application.");
             proctor.readFile("assets/questions.txt", proctor::askQuestion);
