@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c27b66b4-477c-44d3-a846-3a61c6593c03" name="Changes" comment="Chooses a file from specific starting folder">
+    <list default="true" id="c27b66b4-477c-44d3-a846-3a61c6593c03" name="Changes" comment="Captures and stores user input">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -80,7 +81,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659242749788</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Formats and asks questions">
+      <created>1659242890265</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1659242890265</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Captures and stores user input">
+      <created>1659242942823</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1659242942823</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,7 +113,9 @@
     <MESSAGE value="Creates basic loop to get user input" />
     <MESSAGE value="Creates questions for the quiz" />
     <MESSAGE value="Chooses a file from specific starting folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chooses a file from specific starting folder" />
+    <MESSAGE value="Formats and asks questions" />
+    <MESSAGE value="Captures and stores user input" />
+    <option name="LAST_COMMIT_MESSAGE" value="Captures and stores user input" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

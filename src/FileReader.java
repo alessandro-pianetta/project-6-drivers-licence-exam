@@ -6,7 +6,9 @@ import java.util.function.Consumer;
 
 public class FileReader {
     int currentLine = 0;
+    int score = 0;
     String[] studentAnswers = new String[20];
+    String[] cachedAnswers = new String[20];
 
     public void readFile (File source, Consumer<String> callback) throws Exception {
         Scanner input = new Scanner(source);
@@ -31,9 +33,20 @@ public class FileReader {
             count++;
             System.out.println(questionSegment);
         }
+
+        // TODO ADD ERROR CHECKING
+
         String answer = input.next();
-        this.studentAnswers[currentLine] = answer;
+        this.studentAnswers[currentLine] = answer.toUpperCase();
     }
+
+    public void checkAnswers (String answer) {
+        cachedAnswers[currentLine] = answer;
+        if (answer.equals(this.studentAnswers[currentLine])) {
+            score++;
+        }
+    }
+
     public File chooseFile() {
         JFileChooser fileChooser = new JFileChooser("C:/Users/aapiane09/IdeaProjects/DriversLicenceExam/src");
         File file = null;
